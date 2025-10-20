@@ -102,15 +102,4 @@ class AIChatviewController {
       }
     });
   }
-
-  ///For enabling AI thinking
-  void enableAIThinking() {
-    addMessage(aiIsThinkingModel);
-  }
-
-  ///For disabling AI thinking
-  void disableAIThinking() {
-    initialMessageList.removeWhere((e) => e.mssgID == aiIsThinkingModel.mssgID);
-    addMessage(aiIsThinkingModel);
-  }
 }
