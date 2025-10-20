@@ -32,7 +32,7 @@ This package is designed **exclusively** for creating elegant, modern **AI chat 
 
 <p float="left">
   <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/d.png" />
-  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/e.png" width="300" />
+  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/f.png" width="300" />
 </p>
 
 
