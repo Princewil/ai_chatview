@@ -12,6 +12,14 @@ This package is designed **exclusively** for creating elegant, modern **AI chat 
 
 - 🧠 **AI-Focused Design** — Built for chatbots, assistants, and conversational UIs.
 
+## Demos
+![AIChatView GIF](https://github.com/Princewil/ai_chatview/blob/main/assets/g.gif)
+![AIChatView Demo 1](https://github.com/Princewil/ai_chatview/blob/main/assets/a.png)
+![AIChatView Demo 2](https://github.com/Princewil/ai_chatview/blob/main/assets/b.png)
+![AIChatView Demo 3](https://github.com/Princewil/ai_chatview/blob/main/assets/c.png)
+![AIChatView Demo 4](https://github.com/Princewil/ai_chatview/blob/main/assets/d.png)
+![AIChatView Demo 5](https://github.com/Princewil/ai_chatview/blob/main/assets/f.png)
+
 
 ### 💡 Example Usage
 
