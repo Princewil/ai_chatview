@@ -155,26 +155,6 @@ Below is a list of **widgets and features** supported by the **AI Chatview** pac
 ### 💡 Example Usage
 
 ```dart
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: Home(),
-    );
-  }
-}
-
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -188,6 +168,9 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     chatController = AIChatviewController(
+      typewriterAnimatedConfiguration: TypewriterAnimatedConfiguration(
+        typingSpeed: Duration(milliseconds: 2),
+      ),
       textFieldDecoration: TextFieldDecoration(
         minLines: 2,
         maxLines: 4,
@@ -198,9 +181,15 @@ class _HomeState extends State<Home> {
   }
 
   @override
+  void dispose() {
+    chatController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('AI Chatview')),
+      appBar: AppBar(title: Text('AI Chatview Package Demo')),
       body: AIChatView(
         aIChatViewController: chatController,
         onSendTap: onSend,
@@ -241,12 +230,7 @@ class _HomeState extends State<Home> {
   onSend() async {
     await Future.delayed(Duration(seconds: 2));
     chatController.addMessage(
-      ChatModel(
-        isTyping: false,
-        isUser: false,
-        message: mockAIgeneratedText,
-        mssgID: DateTime.now().millisecondsSinceEpoch,
-      ),
+      ChatModel(isUser: false, message: mockAIgeneratedText),
     );
   }
 }
