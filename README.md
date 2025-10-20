@@ -12,23 +12,19 @@ This package is designed **exclusively** for creating elegant, modern **AI chat 
 
 - 🧠 **AI-Focused Design** — Built for chatbots, assistants, and conversational UIs.
 
-## Demos
-<!-- ![AIChatView GIF](https://github.com/Princewil/ai_chatview/blob/main/assets/g.gif)
-![AIChatView Demo 1](https://github.com/Princewil/ai_chatview/blob/main/assets/a.png)
-![AIChatView Demo 2](https://github.com/Princewil/ai_chatview/blob/main/assets/b.png)
-![AIChatView Demo 3](https://github.com/Princewil/ai_chatview/blob/main/assets/c.png)
-![AIChatView Demo 4](https://github.com/Princewil/ai_chatview/blob/main/assets/d.png)
-![AIChatView Demo 5](https://github.com/Princewil/ai_chatview/blob/main/assets/f.png) -->
+
+## 🧪 Demos
 
 <p float="left">
-  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/g.gif" width="300" />
-  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/c.png" width="300" />
+  <img src="https://raw.githubusercontent.com/Princewil/ai_chatview/main/assets/g.gif" width="300" />
+  <img src="https://raw.githubusercontent.com/Princewil/ai_chatview/main/assets/c.png" width="300" />
 </p>
 
 <p float="left">
-  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/d.png" width="300" />
-  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/f.png" width="300" />
+  <img src="https://raw.githubusercontent.com/Princewil/ai_chatview/main/assets/d.png" width="300" />
+  <img src="https://raw.githubusercontent.com/Princewil/ai_chatview/main/assets/f.png" width="300" />
 </p>
+
 
 
 ### 💡 Example Usage
@@ -128,7 +124,7 @@ class _HomeState extends State<Home> {
 - All parameters are optional except AIChatviewController, which must be initialized.
 - Remember to dispose the controller properly to avoid memory leaks.
 
-# 🚀 Version 1.0.0 — *Initial Release*
+# 🚀 Version 0.1.1 — *Initial Release*
 Version 1.0.0 marks the first official release of this package!
 There’s still plenty of room for improvement and community-driven enhancement — and your contributions are highly appreciated.
 
