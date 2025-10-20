@@ -50,6 +50,7 @@ class AIChatView extends StatelessWidget {
               .textFieldLightModeBackgroundColor;
     return StreamBuilder<List<ChatModel>>(
       stream: aIChatViewController.messageStreamController.stream,
+      initialData: aIChatViewController.initialMessageList,
       builder: (context, data) {
         final chats = data.data ?? [];
         return Column(

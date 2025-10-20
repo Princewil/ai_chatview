@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:ai_chatview/compnts/compnt.dart';
 import 'package:ai_chatview/compnts/textfield_decoration.dart';
 import 'package:ai_chatview/model/chat.dart';
 import 'package:flutter/foundation.dart';
@@ -69,6 +70,8 @@ class AIChatviewController {
 
   /// Used to add message in message list.
   void addMessage(ChatModel message) {
+    scrollToBottom();
+    allowTyping = true;
     initialMessageList.add(message);
     if (!messageStreamController.isClosed) {
       messageStreamController.sink.add(initialMessageList);
@@ -83,13 +86,15 @@ class AIChatviewController {
     }
   }
 
-  /// Function to scroll to last messages in chat view
-  void scrollToLastMessage() => Timer(const Duration(milliseconds: 300), () {
-    if (!scrollController.hasClients) return;
-    scrollController.animateTo(
-      scrollController.positions.last.minScrollExtent,
-      curve: Curves.easeIn,
-      duration: const Duration(milliseconds: 300),
-    );
-  });
+  void scrollToBottom() {
+    Future.delayed(Duration(milliseconds: 300), () {
+      if (scrollController.hasClients) {
+        scrollController.animateTo(
+          scrollController.position.maxScrollExtent + 200,
+          duration: Duration(milliseconds: 500),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
 }

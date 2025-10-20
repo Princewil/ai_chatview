@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
     super.initState();
     chatController = AIChatviewController(
       typewriterAnimatedConfiguration: TypewriterAnimatedConfiguration(
-        typingSpeed: Duration(seconds: 30),
+        typingSpeed: Duration(milliseconds: 2),
       ),
       textFieldDecoration: TextFieldDecoration(
         minLines: 2,
@@ -48,6 +48,12 @@ class _HomeState extends State<Home> {
         textFieldLightModeBackgroundColor: Colors.grey.shade300,
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    chatController.dispose();
+    super.dispose();
   }
 
   @override
