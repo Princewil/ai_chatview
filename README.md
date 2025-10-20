@@ -20,23 +20,20 @@ This package is designed **exclusively** for creating elegant, modern **AI chat 
 ![AIChatView Demo 4](https://github.com/Princewil/ai_chatview/blob/main/assets/d.png)
 ![AIChatView Demo 5](https://github.com/Princewil/ai_chatview/blob/main/assets/f.png) -->
 
-<img src="https://github.com/Princewil/ai_chatview/blob/main/assets/g.gif" width="500" />
-
 <p float="left">
+  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/g.gif" width="300" />
   <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/a.png" width="300" />
-  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/b.png" width="300" />
 </p>
 
 <p float="left">
-  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/c.png" />
-  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/d.png" width="300" />
+  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/b.png" width="300" />
+  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/c.png" width="300" />
 </p>
 
-<p align="center">
-  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/f.png" width="500"/>
+<p float="left">
+  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/d.png" />
+  <img src="https://github.com/Princewil/ai_chatview/blob/main/assets/e.png" width="300" />
 </p>
-
-
 
 
 ### 💡 Example Usage
