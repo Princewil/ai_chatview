@@ -14,7 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   markdown_widget: ^2.3.2+8
-  flutter_markdown_plus: ^1.0.5
+  # flutter_markdown_plus: ^1.0.5 [To consider using this package for MarkDown]
 
 dev_dependencies:
   flutter_test:
