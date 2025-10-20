@@ -72,7 +72,12 @@ class AIChatviewController {
   void addMessage(ChatModel message) {
     scrollToBottom();
     allowTyping = true;
-    initialMessageList.add(message);
+    if (message.isUser) {
+      initialMessageList.addAll([message, aiIsThinkingModel]);
+    } else {
+      initialMessageList.remove(aiIsThinkingModel);
+      initialMessageList.add(message);
+    }
     if (!messageStreamController.isClosed) {
       messageStreamController.sink.add(initialMessageList);
     }
@@ -96,5 +101,16 @@ class AIChatviewController {
         );
       }
     });
+  }
+
+  ///For enabling AI thinking
+  void enableAIThinking() {
+    addMessage(aiIsThinkingModel);
+  }
+
+  ///For disabling AI thinking
+  void disableAIThinking() {
+    initialMessageList.removeWhere((e) => e.mssgID == aiIsThinkingModel.mssgID);
+    addMessage(aiIsThinkingModel);
   }
 }

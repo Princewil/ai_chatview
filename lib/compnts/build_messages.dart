@@ -21,7 +21,7 @@ class BuildMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isUser = message.isUser;
-    if (message.isTyping) {
+    if (message.mssgID == aiIsThinkingModel.mssgID) {
       if (kAiTypingWidget != null) {
         return kAiTypingWidget!;
       }

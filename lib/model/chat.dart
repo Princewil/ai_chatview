@@ -4,18 +4,11 @@ class ChatModel {
   ///Is [isUser] is true, if the [message] was sent by the user
   final bool isUser;
 
-  ///For holding when AI is typing or thinking
-  final bool isTyping;
-
   ///This also severs as the DateTime in [millisecondsSinceEpoch].˝
   final int mssgID;
 
-  ChatModel({
-    this.message = '',
-    this.isUser = false,
-    this.isTyping = false,
-    int? mssgID,
-  }) : mssgID = mssgID ?? DateTime.now().millisecondsSinceEpoch;
+  ChatModel({this.message = '', this.isUser = false, int? mssgID})
+    : mssgID = mssgID ?? DateTime.now().millisecondsSinceEpoch;
 
   Map toMap(ChatModel chatModel) {
     final Map<String, dynamic> map = {};
@@ -32,3 +25,6 @@ class ChatModel {
     isUser: map['IsUser'],
   );
 }
+
+///This is a constant that gets injected when AI is thinking
+final aiIsThinkingModel = ChatModel(isUser: false, message: '', mssgID: -1);

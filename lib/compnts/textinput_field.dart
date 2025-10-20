@@ -122,7 +122,6 @@ class _ChatTextInputWidgetState extends State<ChatTextInputWidget> {
       ChatModel(
         isUser: true,
         message: widget.chatController.textEdittingController.text,
-        isTyping: false,
       ),
     );
     widget.chatController.textEdittingController.clear();

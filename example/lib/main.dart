@@ -100,7 +100,7 @@ class _HomeState extends State<Home> {
   onSend() async {
     await Future.delayed(Duration(seconds: 2));
     chatController.addMessage(
-      ChatModel(isTyping: false, isUser: false, message: mockAIgeneratedText),
+      ChatModel(isUser: false, message: mockAIgeneratedText),
     );
   }
 }
