@@ -1,6 +1,6 @@
 name: ai_chatview
 description: "A customizable AI chat interface for Flutter with markdown and typing animation support."
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/Princewil/ai_chatview.git
 repository: https://github.com/Princewil/ai_chatview.git
 issue_tracker: https://github.com/Princewil/ai_chatview/issues
