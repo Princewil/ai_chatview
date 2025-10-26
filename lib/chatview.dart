@@ -61,36 +61,38 @@ class AIChatView extends StatelessWidget {
     kAiWidget = aiWidget;
     kTextFieldOtherWidget = textFieldOtherWidget;
     kLeftPanelWidget = leftPanelWidget;
-    backgroundColor = isDarkMode(context)
-        ? aIChatViewController
-              .textFieldDecoration
-              .textFieldDarkModeBackgroundColor
-        : aIChatViewController
-              .textFieldDecoration
-              .textFieldLightModeBackgroundColor;
+    userInputBackGroundColor = isDarkMode(context)
+        ? Colors.white
+        : Colors.grey.shade300;
     return StreamBuilder<List<ChatModel>>(
       stream: aIChatViewController.messageStreamController.stream,
       initialData: aIChatViewController.initialMessageList,
       builder: (context, data) {
         final chats = data.data ?? [];
-        return Column(
+        return Stack(
           children: [
-            Expanded(
-              child: chats.isEmpty
-                  ? emptyState
-                  : ListView.builder(
-                      physics: ClampingScrollPhysics(),
-                      controller: aIChatViewController.scrollController,
-                      itemCount: chats.length,
-                      itemBuilder: (_, index) => BuildMessage(
-                        chats[index],
-                        chatController: aIChatViewController,
-                        allChats: chats,
-                      ),
+            chats.isEmpty
+                ? emptyState
+                : ListView.builder(
+                    padding: EdgeInsets.only(bottom: 200),
+                    physics: ClampingScrollPhysics(),
+                    controller: aIChatViewController.scrollController,
+                    itemCount: chats.length,
+                    itemBuilder: (_, index) => BuildMessage(
+                      chats[index],
+                      chatController: aIChatViewController,
+                      allChats: chats,
                     ),
+                  ),
+            Align(
+              alignment: AlignmentGeometry.bottomCenter,
+              child: Column(
+                children: [
+                  Expanded(child: SizedBox()),
+                  ChatTextInputWidget(chatController: aIChatViewController),
+                ],
+              ),
             ),
-            ChatTextInputWidget(chatController: aIChatViewController),
-            SizedBox(height: 10),
           ],
         );
       },

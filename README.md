@@ -113,12 +113,18 @@ class _HomeState extends State<Home> {
 
 # Some important parameters
 - [AIChatviewController]→ Must be initialized. This controller manages and updates the chat view UI.
+
 - [emptyState]→ The widget displayed when the chat view has no messages.
-- [textFieldOtherWidget]→ A widget that adds extra functionality (e.g., microphone, attachments) beside the text field.
+
+- [textFieldOtherWidget]→ A widget that adds extra functionality (e.g., microphone, attachments) on the right of the text input field.
+
 - [leftPanelWidget]→ An optional widget positioned on the left side for additional features when needed.
+
 - [aiWidget]→ A widget displayed below each AI-generated message for extra interactions such as thumbs up, report, etc.
--[aiTypingWidget]→ The widget to customize when the AI is “thinking” or generating a response.
--[TypewriterAnimatedConfiguration]→ Controls the AI typing animation speed and behavior.
+
+- [aiTypingWidget]→ The widget to customize when the AI is “thinking” or generating a response.
+
+- [TypewriterAnimatedConfiguration]→ Controls the AI typing animation speed and behavior.
 
 # Note:
 - All parameters are optional except AIChatviewController, which must be initialized.

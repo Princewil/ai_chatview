@@ -41,12 +41,7 @@ class _HomeState extends State<Home> {
       typewriterAnimatedConfiguration: TypewriterAnimatedConfiguration(
         typingSpeed: Duration(milliseconds: 2),
       ),
-      textFieldDecoration: TextFieldDecoration(
-        minLines: 2,
-        maxLines: 4,
-        textFieldDarkModeBackgroundColor: Colors.white,
-        textFieldLightModeBackgroundColor: Colors.grey.shade300,
-      ),
+      textFieldDecoration: TextFieldDecoration(minLines: 2, maxLines: 4),
     );
   }
 
@@ -89,6 +84,30 @@ class _HomeState extends State<Home> {
             radius: 22,
             child: Icon(Icons.auto_awesome), //bubble_chart_rounded
           ),
+        ),
+        aiWidget: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                IconButton(onPressed: () {}, icon: Icon(Icons.thumb_up_alt)),
+                IconButton(onPressed: () {}, icon: Icon(Icons.thumb_down)),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'AI is not always correct',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

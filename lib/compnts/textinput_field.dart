@@ -18,99 +18,83 @@ class ChatTextInputWidget extends StatefulWidget {
 class _ChatTextInputWidgetState extends State<ChatTextInputWidget> {
   @override
   Widget build(BuildContext context) {
-    final backgroundColor = isDarkMode(context)
-        ? widget
-              .chatController
-              .textFieldDecoration
-              .textFieldDarkModeBackgroundColor
-        : widget
-              .chatController
-              .textFieldDecoration
-              .textFieldLightModeBackgroundColor;
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-      ).copyWith(bottom: 10, top: 10),
-      child: Row(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          if (kLeftPanelWidget != null) kLeftPanelWidget!,
-          if (kLeftPanelWidget != null) SizedBox(width: 10),
-          Expanded(
-            child: Container(
-              //constraints: const BoxConstraints(minHeight: 10),
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-              decoration: BoxDecoration(
-                color: backgroundColor,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(minHeight: 25),
-                      child: Center(
-                        child: TextField(
-                          textAlignVertical: TextAlignVertical.center,
-                          controller:
-                              widget.chatController.textEdittingController,
-                          maxLines: widget
-                              .chatController
-                              .textFieldDecoration
-                              .maxLines,
-                          minLines: widget
-                              .chatController
-                              .textFieldDecoration
-                              .minLines,
-                          keyboardType: TextInputType.multiline,
-                          textInputAction: TextInputAction.newline,
-                          onSubmitted: (_) => onTap(),
-                          // onTapUpOutside: (_) => KeyboardUtil.hideKeyboard(context),
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: widget
-                                .chatController
-                                .textFieldDecoration
-                                .hintText,
-                            hintStyle: TextStyle(
-                              color: widget
-                                  .chatController
-                                  .textFieldDecoration
-                                  .hintStyleColor,
-                            ),
-                            isDense: true,
-                            contentPadding: const EdgeInsets.symmetric(
-                              vertical: 5,
-                              horizontal: 12,
-                            ),
-                          ),
-                          onChanged: (s) {
-                            final isTyping = s.trim().isNotEmpty;
-                            if (isTyping != _userIsTyping) {
-                              setState(() => _userIsTyping = isTyping);
-                            }
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
+    final isDark = isDarkMode(context);
 
-                  AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 180),
-                    transitionBuilder: (child, anim) =>
-                        ScaleTransition(scale: anim, child: child),
-                    child: _userIsTyping
-                        ? IconButton(
-                            icon: Icon(Icons.near_me_rounded),
-                            onPressed: onTap,
-                          )
-                        : kTextFieldOtherWidget ?? SizedBox(),
-                  ),
-                ],
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 10,
+            offset: Offset(0, -2),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          TextField(
+            textAlignVertical: TextAlignVertical.center,
+            controller: widget.chatController.textEdittingController,
+            maxLines: widget.chatController.textFieldDecoration.maxLines,
+            minLines: widget.chatController.textFieldDecoration.minLines,
+            keyboardType: TextInputType.multiline,
+            textInputAction: TextInputAction.newline,
+            onSubmitted: (_) => onTap(),
+            // onTapUpOutside: (_) => KeyboardUtil.hideKeyboard(context),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: widget.chatController.textFieldDecoration.hintText,
+              hintStyle: TextStyle(
+                color: widget.chatController.textFieldDecoration.hintStyleColor,
+              ),
+              isDense: true,
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 5,
+                horizontal: 12,
               ),
             ),
+            onChanged: (s) {
+              final isTyping = s.trim().isNotEmpty;
+              if (isTyping != _userIsTyping) {
+                setState(() => _userIsTyping = isTyping);
+              }
+            },
           ),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              if (kLeftPanelWidget != null) kLeftPanelWidget!,
+              Spacer(),
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 180),
+                transitionBuilder: (child, anim) =>
+                    ScaleTransition(scale: anim, child: child),
+                child: _userIsTyping
+                    ? InkWell(
+                        onTap: onTap,
+                        borderRadius: BorderRadius.circular(22),
+                        child: CircleAvatar(
+                          radius: 22,
+                          backgroundColor: isDark
+                              ? Colors.white
+                              : Colors.black87,
+                          child: Icon(
+                            Icons.near_me_rounded,
+                            color: isDark ? Colors.black : Colors.white,
+                          ),
+                        ),
+                      )
+                    : kTextFieldOtherWidget ?? SizedBox(),
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
         ],
       ),
     );

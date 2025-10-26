@@ -5,4 +5,4 @@ final kBodyTextColor = Color(0xFF667085);
 Color? kTextFieldDarkModeBackgroundColor;
 Color? kTextFieldLightModeBackgroundColor;
 
-Color? backgroundColor;
+Color? userInputBackGroundColor;

@@ -55,7 +55,7 @@ class BuildMessage extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                 decoration: BoxDecoration(
-                  color: backgroundColor,
+                  color: userInputBackGroundColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(message.message, style: TextStyle(fontSize: 16)),
